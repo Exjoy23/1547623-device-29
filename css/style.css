@@ -1,0 +1,421 @@
+@font-face {
+  font-weight: 800;
+  font-style: normal;
+  font-family: "Gilroy";
+
+  src: url("../fonts/gilroyextrabold.woff2") format("woff2"),
+  url("../fonts/gilroyextrabold.woff") format("woff");
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 300;
+  font-style: normal;
+  font-family: "Gilroy";
+
+  src: url("../fonts/gilroylight.woff2") format("woff2"),
+  url("../fonts/gilroylight.woff") format("woff");
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 300;
+  font-style: normal;
+  font-family: "OpenSans";
+
+  src: url("../fonts/opensanslight.woff2") format("woff2"),
+  url("../fonts/opensanslight.woff") format("woff");
+
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: normal;
+  font-style: normal;
+  font-family: "OpenSans";
+
+  src: url("../fonts/opensans.woff2") format("woff2"),
+  url("../fonts/opensans.woff") format("woff");
+
+  font-display: swap;
+}
+
+:root {
+  --basic-black: #000000;
+  --basic-white: #FFFFFF;
+  --special-yellow: #F7E296;
+  --white-03-op: rgba(255, 255, 255, 0.3);
+}
+
+/* GLOBAL */
+
+.page {
+  height: 100%;
+}
+
+.page__body {
+  display: grid;
+
+  grid-template-rows: min-content 1fr min-content;
+
+  margin: 0;
+  padding: 0;
+
+  min-width: 1200px;
+  min-height: 100%;
+
+  background-color: var(--basic-white);
+
+  color: var(--basic-black);
+
+  font-weight: 800;
+  font-size: 18px;
+  font-family: "Gilroy", Arial, sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.visually__hidden {
+  position: absolute;
+
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+
+  margin: -1px;
+  padding: 0;
+
+  width: 1px;
+  height: 1px;
+
+  border: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 20px;
+
+  width: 1200px;
+}
+
+/* HEADER */
+
+.header__wrapper {
+  min-height: 186px;
+  width: 1160px;
+
+  background-color: var(--special-yellow);
+}
+
+.main__logo {
+  margin-top: 20px;
+  margin-bottom: -15px;
+  margin-left: 60px;
+
+  width: 163px;
+  height: 35px;
+}
+
+.main__logo:hover {
+  opacity: 0.6;
+}
+
+.main__logo:active {
+  opacity: 0.3;
+}
+
+.search__form__item {
+  position: relative;
+}
+
+.search__form__item::before {
+  position: absolute;
+  top: 4px;
+  left: 1px;
+
+  width: 16px;
+  height: 16px;
+
+  background-image: url(../img/icon-search.svg);
+  background-repeat: no-repeat;
+
+  content: "";
+}
+
+.search__form__input {
+  padding-right: 120px;
+  padding-bottom: 14px;
+  padding-left: 38px;
+
+  width: 440px;
+
+  outline: none;
+
+  border: none;
+  border-bottom: 2px solid transparent;
+
+  background-color: transparent;
+
+  font-weight: 300;
+  font-size: 15px;
+  font-family: "OpenSans", Arial, Helvetica, sans-serif;
+
+  opacity: 0.3;
+}
+
+.search__form__input:hover {
+  opacity: 0.6;
+}
+
+.search__form__input:focus {
+  border-bottom: 2px solid var(--basic-black);
+
+  opacity: 1;
+}
+
+.search__form__button {
+  position: absolute;
+  top: -16px;
+  right: 0;
+
+  width: 84px;
+  height: 50px;
+
+  border: 2px solid var(--basic-black);
+
+  background-color: transparent;
+
+  text-transform: uppercase;
+
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+.search__form__button:hover,
+.search__form__button:focus {
+  background-color: var(--basic-black);
+
+  color: var(--basic-white);
+
+  opacity: 1;
+}
+
+.search__form__button:active {
+  background-color: var(--basic-black);
+
+  color: var(--white-03-op);
+
+  opacity: 1;
+}
+
+.search__form__input:focus + .search__form__button {
+  opacity: 1;
+}
+
+.navigation {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  padding-top: 44px;
+  padding-right: 60px;
+  padding-left: 60px;
+}
+
+.user__nav {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+
+  width: 500px;
+
+  list-style: none;
+}
+
+.search__form {
+  width: 540px;
+}
+
+.user__nav {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  margin-bottom: 37px;
+
+  font-weight: 300;
+  font-size: 15px;
+  font-family: "OpenSans", Arial, Helvetica, sans-serif;
+}
+
+.user__nav__item {
+  padding-top: 2px;
+}
+
+.user__nav__link {
+  color: inherit;
+}
+
+.user__nav__link:hover {
+  opacity: 0.6;
+}
+
+.user__nav__link:active {
+  opacity: 0.3;
+}
+
+.user__nav__login {
+  position: relative;
+
+  margin-right: 213px;
+  padding-left: 24px;
+}
+
+.user__nav__login::before {
+  position: absolute;
+  top: 5px;
+  left: 0;
+
+  width: 13px;
+  height: 14px;
+
+  background-image: url(../img/login.svg);
+
+  content: "";
+}
+
+.user__nav__compare {
+  position: relative;
+
+  margin-right: 44px;
+  padding-left: 26px;
+}
+
+.user__nav__compare::before {
+  position: absolute;
+  top: 5px;
+  left: 0;
+
+  width: 14px;
+  height: 14px;
+
+  background-image: url(../img/compare.svg);
+
+  content: "";
+}
+
+.user__nav__cart {
+  position: relative;
+
+  padding-left: 22px;
+}
+
+.user__nav__cart::before {
+  position: absolute;
+  top: 6px;
+  left: 0;
+
+  width: 10px;
+  height: 10px;
+
+  background-image: url(../img/cart.svg);
+
+  content: "";
+}
+
+.main__nav {
+  display: flex;
+
+  margin: 0;
+  padding: 0;
+
+  width: 1040px;
+
+  list-style: none;
+
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.main__nav__link {
+  color: inherit;
+}
+
+.main__nav__link:hover {
+  opacity: 0.6;
+}
+
+.main__nav__link:active {
+  opacity: 0.3;
+}
+
+.main__nav__item:first-child {
+  position: relative;
+
+  margin-right: 283px;
+}
+
+.main__nav__item:first-child .main__nav__link {
+  padding-right: 38px;
+}
+
+.main__nav__item:first-child::after {
+  position: absolute;
+  top: -1px;
+  right: 2px;
+
+  width: 22px;
+  height: 22px;
+
+  background-image: url(../img/icon-plus.svg);
+
+  content: "";
+}
+
+.main__nav__item:nth-child(2) {
+  margin-right: 35px;
+}
+
+.main__nav__item:nth-child(3) {
+  margin-right: 107px;
+}
+
+.catalog__menu {
+  display: none;
+
+  flex-wrap: wrap;
+
+  margin: 0;
+  padding: 0;
+
+  width: 540px;
+
+  list-style: none;
+
+  font-weight: 300;
+  font-size: 15px;
+  font-family: "OpenSans", Arial, Helvetica, sans-serif; ;
+}
+
+.catalog__menu__link {
+  color: inherit;
+}
