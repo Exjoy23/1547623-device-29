@@ -46,6 +46,7 @@
   --basic-black: #000000;
   --basic-white: #FFFFFF;
   --special-yellow: #F7E296;
+  --special-yellow-dark: #F0C52E;
   --white-03-op: rgba(255, 255, 255, 0.3);
 }
 
@@ -125,6 +126,9 @@ a {
 }
 
 .main__logo {
+  position: relative;
+  z-index: 2;
+
   margin-top: 20px;
   margin-bottom: -15px;
   margin-left: 60px;
@@ -140,6 +144,15 @@ a {
 .main__logo:active {
   opacity: 0.3;
 }
+
+/* .main__logo__link {
+  display: block;
+
+  padding: 20px;
+
+  width: 163px;
+  height: 35px;
+} */
 
 .search__form__item {
   position: relative;
@@ -231,6 +244,8 @@ a {
 }
 
 .navigation {
+  position: relative;
+
   display: flex;
 
   flex-wrap: wrap;
@@ -389,6 +404,8 @@ a {
   background-image: url(../img/icon-plus.svg);
 
   content: "";
+
+  cursor: pointer;
 }
 
 .main__nav__item:nth-child(2) {
@@ -400,22 +417,212 @@ a {
 }
 
 .catalog__menu {
+  position: absolute;
+  top: 20px;
+  left: -60px;
+  z-index: 3;
+
   display: none;
+
+  grid-template-columns: max-content max-content max-content;
+  grid-template-rows: auto;
 
   flex-wrap: wrap;
 
   margin: 0;
   padding: 0;
+  padding-top: 32px;
+  padding-right: 570px;
+  padding-bottom: 42px;
+  padding-left: 60px;
 
-  width: 540px;
+  width: 1160px;
+
+  background-color: var(--special-yellow);
 
   list-style: none;
 
+  text-transform: none;
+  letter-spacing: normal;
+
   font-weight: 300;
   font-size: 15px;
-  font-family: "OpenSans", Arial, Helvetica, sans-serif; ;
+  font-family: "OpenSans", Arial, Helvetica, sans-serif;
+
+  column-gap: 63px;
+
+  row-gap: 20px;
+}
+
+.main__nav__item:hover .catalog__menu {
+  display: grid;
+}
+
+.catalog__menu:hover {
+  display: grid;
 }
 
 .catalog__menu__link {
   color: inherit;
+}
+
+.catalog__menu__link:hover {
+  opacity: 0.6;
+}
+
+.catalog__menu__link:active {
+  opacity: 0.3;
+}
+
+.gallery__slider {
+  margin: 0;
+  padding: 0;
+  padding-right: 60px;
+  padding-left: 60px;
+
+  background: linear-gradient(180deg, var(--special-yellow) 114px, var(--basic-white) 114px);
+
+  list-style: none;
+}
+
+.gallery__slider__item {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+}
+
+.gallery__slider__img {
+  position: relative;
+  top: -14px;
+  left: 30px;
+}
+
+.gallery__slider__img_slide2 {
+  top: 11px;
+  left: 56px;
+}
+
+.gallery__slider__img_slide3 {
+  top: 67px;
+  left: -27px;
+}
+
+.gallery__slider__content {
+  padding-top: 78px;
+  padding-left: 20px;
+}
+
+.gallery__slider__title {
+  position: relative;
+  z-index: 2;
+
+  margin: 0;
+  margin-bottom: 27px;
+
+  font-size: 47px;
+
+  line-height: 58px;
+}
+
+.gallery__slider__title::before {
+  position: absolute;
+  top: -59px;
+  left: 0;
+
+  width: 100px;
+  height: 7px;
+
+  background-color: var(--basic-white);
+
+  content: "";;
+}
+
+.gallery__slider__title::after {
+  position: absolute;
+  top: -29px;
+  right: -12px;
+  z-index: -1;
+
+  color: var(--basic-white);
+
+  content: attr(data-count);
+
+  font-size: 179px;
+}
+
+.gallery__slider__title_slide2::after,
+.gallery__slider__title_slide3::after {
+  top: -29px;
+  right: -6px;
+}
+
+.gallery__slider__text {
+  margin: 0;
+  margin-bottom: 60px;
+
+  font-weight: 300;
+  font-size: 15px;
+  font-family: "OpenSans", Arial, Helvetica, sans-serif;
+
+  line-height: 20px;
+}
+
+.button {
+  display: inline-block;
+
+  padding-right: 40px;
+  padding-left: 44px;
+
+  background: linear-gradient(0deg, var(--basic-white) 0%, var(--basic-white) 30%, var(--special-yellow-dark) 30%, var(--special-yellow-dark) 70%,var(--basic-white) 70%, var(--basic-white) 100%);
+
+  color: inherit;
+
+  vertical-align: top;
+  text-align: center;
+
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.gallery__slider__link {
+  margin-bottom: 61px;
+}
+
+.gallery__slider__list {
+  display: grid;
+
+  grid-template-columns: max-content max-content max-content;
+  grid-template-rows: auto;
+
+  margin: 0;
+  padding: 0;
+
+  column-gap: 62px;
+}
+
+.gallery__slider__content__item {
+  display: flex;
+
+  flex-direction: column;
+
+  margin: 0;
+}
+
+.gallery__slider__subtitle {
+  margin: 0;
+  margin-bottom: 16px;
+
+  letter-spacing: 0.1em;
+
+  font-weight: 300;
+  font-size: 36px;
+}
+
+.gallery__slider__desc {
+  margin: 0;
+
+  letter-spacing: 0.1em;
+
+  font-weight: 300;
+  font-size: 13px;
 }
