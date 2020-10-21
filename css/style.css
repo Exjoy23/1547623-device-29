@@ -45,9 +45,10 @@
 :root {
   --basic-black: #000000;
   --basic-white: #FFFFFF;
+  --black-03-op: rgba(0, 0, 0, 0.3);
   --special-yellow: #F7E296;
   --special-yellow-dark: #F0C52E;
-  --white-03-op: rgba(255, 255, 255, 0.3);
+  --white-03-op: rgba(255, 255, 255, 0.3);;
 }
 
 /* GLOBAL */
@@ -144,15 +145,6 @@ a {
 .main__logo:active {
   opacity: 0.3;
 }
-
-/* .main__logo__link {
-  display: block;
-
-  padding: 20px;
-
-  width: 163px;
-  height: 35px;
-} */
 
 .search__form__item {
   position: relative;
@@ -474,11 +466,18 @@ a {
   opacity: 0.3;
 }
 
+/* MAIN */
+
+/* GALLERY */
+
 .gallery__slider {
   margin: 0;
+  margin-bottom: 99px;
   padding: 0;
   padding-right: 60px;
   padding-left: 60px;
+
+  min-height: 491px;
 
   background: linear-gradient(180deg, var(--special-yellow) 114px, var(--basic-white) 114px);
 
@@ -558,7 +557,7 @@ a {
 
 .gallery__slider__text {
   margin: 0;
-  margin-bottom: 60px;
+  margin-bottom: 51px;
 
   font-weight: 300;
   font-size: 15px;
@@ -570,10 +569,12 @@ a {
 .button {
   display: inline-block;
 
+  padding-top: 9px;
   padding-right: 40px;
+  padding-bottom: 9px;
   padding-left: 44px;
 
-  background: linear-gradient(0deg, var(--basic-white) 0%, var(--basic-white) 30%, var(--special-yellow-dark) 30%, var(--special-yellow-dark) 70%,var(--basic-white) 70%, var(--basic-white) 100%);
+  background: linear-gradient(0deg, var(--basic-white) 0%, var(--basic-white) 39%, var(--special-yellow-dark) 39%, var(--special-yellow-dark) 61%,var(--basic-white) 61%, var(--basic-white) 100%);
 
   color: inherit;
 
@@ -584,8 +585,18 @@ a {
   letter-spacing: 0.2em;
 }
 
+.button:hover {
+  background: var(--special-yellow-dark);
+}
+
+.button:active {
+  background: var(--special-yellow-dark);
+
+  color: var(--black-03-op);
+}
+
 .gallery__slider__link {
-  margin-bottom: 61px;
+  margin-bottom: 52px;
 }
 
 .gallery__slider__list {
@@ -625,4 +636,157 @@ a {
 
   font-weight: 300;
   font-size: 13px;
+}
+
+.gallery__wrapper {
+  position: relative;
+}
+
+.gallery__slider__control {
+  position: absolute;
+  top: 320px;
+  right: 108px;
+}
+
+.gallery__slider__control__button {
+  width: 12px;
+  height: 12px;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: var(--basic-white);
+
+  box-shadow: inset 0 0 0 1px var(--basic-black);
+
+  cursor: pointer;
+}
+
+.gallery__slider__control__button:not(:last-child) {
+  margin-right: 13.5px;
+}
+
+.gallery__slider__control__button.current {
+  box-shadow: inset 0 0 0 1px var(--basic-black),
+  inset 0 0 0 3px var(--basic-white),
+  inset 0 0 0 4px var(--basic-black);
+}
+
+/* POPULAR */
+
+.popular__list {
+  display: grid;
+
+  grid-template-columns: repeat(6, 160px);
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  column-gap: 40px;
+}
+
+.popular__item {
+  position: relative;
+
+  background: linear-gradient(180deg, var(--special-yellow) 0%, var(--special-yellow) 160px, var(--basic-white) 160px);
+}
+
+.popular__item:hover {
+  background: linear-gradient(180deg, var(--special-yellow-dark) 0%, var(--special-yellow-dark) 160px, var(--basic-white) 160px);
+}
+
+.popular__item:active::before {
+  opacity: 0.3;
+}
+
+.popular__item::before {
+  position: absolute;
+
+  background-repeat: no-repeat;
+
+  content: "";
+}
+
+.popular__item:nth-child(1)::before {
+  top: 52px;
+  left: 31px;
+
+  width: 97px;
+  height: 55px;
+
+  background-image: url(../img/popular-1.svg);
+}
+
+.popular__item:nth-child(2)::before {
+  top: 26px;
+  left: 37px;
+
+  width: 86px;
+  height: 117px;
+
+  background-image: url(../img/popular-2.svg);
+}
+
+.popular__item:nth-child(3)::before {
+  top: 36px;
+  left: 44px;
+
+  width: 71px;
+  height: 87px;
+
+  background-image: url(../img/popular-3.svg);
+}
+
+.popular__item:nth-child(4)::before {
+  top: 48px;
+  left: 27px;
+
+  width: 107px;
+  height: 65px;
+
+  background-image: url(../img/popular-4.svg);
+}
+
+.popular__item:nth-child(5)::before {
+  top: 31px;
+  left: 52px;
+
+  width: 56px;
+  height: 98px;
+
+  background-image: url(../img/popular-5.svg);
+}
+
+.popular__item:nth-child(6)::before {
+  top: 46px;
+  left: 14px;
+
+  width: 132px;
+  height: 69px;
+
+  background-image: url(../img/popular-6.svg);
+}
+
+.popular__link {
+  position: relative;
+  z-index: 3;
+
+  display: block;
+
+  padding-top: 198px;
+
+  width: 160px;
+  height: 260px;
+
+  color: inherit;
+
+  letter-spacing: 0.05em;
+
+  line-height: 22px;
+}
+
+.popular__link.special {
+  letter-spacing: normal;
 }
