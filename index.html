@@ -16,7 +16,7 @@
   <header class="main__header">
     <div class="container">
       <div class="main__logo">
-        <a class="main__logo__link" href="">
+        <a>
           <svg width="163" height="35" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0)">
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -33,7 +33,7 @@
       </div>
       <div class="header__wrapper">
         <nav class="navigation">
-          <ul class="search__form user__nav">
+          <ul class="search__form">
             <li class="search__form__item">
               <input type="text" class="search__form__input" placeholder="Поиск по сайту">
               <button class="search__form__button" type="button">
@@ -44,17 +44,20 @@
 
           <ul class="user__nav">
             <li class="user__nav__item">
-              <a href="" class="user__nav__link user__nav__login">
+              <a href="" class="user__nav__link">
                 Войти
+              </a>
+              <a href="" class="user__nav__link">
+                
               </a>
             </li>
             <li class="user__nav__item">
-              <a href="" class="user__nav__link user__nav__compare">
+              <a href="" class="user__nav__link">
                 Сравнить
               </a>
             </li>
             <li class="user__nav__item">
-              <a href="" class="user__nav__link user__nav__cart">
+              <a href="" class="user__nav__link">
                 Корзина
               </a>
             </li>
@@ -83,7 +86,7 @@
                   </a>
                 </li>
                 <li class="catalog__menu__item">
-                  <a href="" class="catalog__menu__link">
+                  <a href="catalog.html" class="catalog__menu__link">
                     Моноподы для селфи
                   </a>
                 </li>
@@ -258,9 +261,9 @@
         </ul>
 
         <div class="gallery__slider__control">
-          <button class="gallery__slider__control__button current"></button>
-          <button class="gallery__slider__control__button"></button>
-          <button class="gallery__slider__control__button"></button>
+          <button class="gallery__slider__control__button current" type="button"></button>
+          <button class="gallery__slider__control__button" type="button"></button>
+          <button class="gallery__slider__control__button" type="button"></button>
         </div>
       </div>
     </section>
@@ -281,7 +284,7 @@
             </a>
           </li>
           <li class="popular__item">
-            <a href="" class="popular__link">
+            <a href="catalog.html" class="popular__link">
               Моноподы для&nbsp;селфи
             </a>
           </li>
@@ -457,10 +460,38 @@
             Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете
             проверить работоспособность покупки. Всякое бывает.
           </p>
-          <img class="contacts__img" src="img/map.jpg" alt="Наш офис расположен на улице Строителей, дом 15">
+          <a class="contacts__link__map"
+            href="https://yandex.ru/maps/213/moscow/house/ulitsa_stroiteley_15/Z04YcwVpT0ADQFtvfXp5d3VrZA==/?ll=37.530235%2C55.687036&utm_source=main_stripe_big&z=17.1">
+            <img class="contacts__img" src="img/map.jpg" alt="Наш офис расположен на улице Строителей, дом 15">
+          </a>
           <a href="" class="contacts__link button">
             напишите нам
           </a>
+        </div>
+
+        <div class="contacts__popup">
+          <p class="contacts__popup__item">
+            <label class="contacts__popup__name" for="popup__name">Ваше имя:</label>
+            <input class="contacts__popup__name__input" id="popup__name" type="text" placeholder="Имя Фамилия">
+          </p>
+          <p class="contacts__popup__item">
+            <label class="contacts__popup__email" for="popup__email">Ваш e-mail:</label>
+            <input class="contacts__popup__email__input" id="popup__email" type="email" placeholder="email@example.com">
+          </p>
+          <p class="contacts__popup__item">
+            <label class="contacts__popup__text" for="popup__text">Текст письма:</label>
+            <textarea class="contacts__popup__text__textaarea" name="text" id="popup__text" cols="30" rows="10">В свободной форме</textarea>
+          </p>
+          <button class="contacts__popup__submit button" type="submit">Отправить</button>
+          <button class="contacts__popup__button" type="button"></button>
+        </div>
+
+        <div class="contacts__map">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A13ebbdaa403be0ef5d5aa71d0df92845f3f086be91c4299020bdd617f59516ee&amp;source=constructor"
+            width="960" height="559" frameborder="0">
+          </iframe>
+          <button class="contacts__map__button" type="button"></button>
         </div>
       </div>
     </section>
@@ -472,7 +503,7 @@
   <footer class="footer">
     <div class="container footer__wrapper">
       <div class="footer__address">
-        <a class="footer__address__link" href="">
+        <a class="footer__address__link__index">
           <svg width="163" height="35" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip1)">
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -515,7 +546,7 @@
 
         <ul class="footer__social__list">
           <li class="footer__social__item">
-            <a href="" class="footer__social__link">
+            <a href="" class="footer__social__link" aria-label="facebook">
               <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M32 16a16 16 0 10-18.5 15.8V20.62H9.44V16h4.06v-3.53c0-4 2.39-6.22 6.04-6.22 1.75 0 3.58.31 3.58.31v3.94h-2.01c-1.99 0-2.61 1.23-2.61 2.5v3h4.44l-.71 4.63H18.5V31.8A16 16 0 0032 16z"
@@ -524,7 +555,7 @@
             </a>
           </li>
           <li class="footer__social__item">
-            <a href="" class="footer__social__link">
+            <a href="" class="footer__social__link" aria-label="instagram">
               <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M20.8 16a4.8 4.8 0 11-9.52-.8H9.6v6.4c0 .44.36.8.8.8h11.2a.8.8 0 00.8-.8v-6.4h-1.68c.05.26.08.53.08.8zM16 19.2a3.2 3.2 0 100-6.4 3.2 3.2 0 000 6.4zm3.84-6.56h1.92a.48.48 0 00.48-.48v-1.92a.48.48 0 00-.48-.48h-1.92a.48.48 0 00-.48.48v1.92c0 .26.22.48.48.48zM16 .64a15.36 15.36 0 100 30.72A15.36 15.36 0 0016 .64zm8 21.58c0 .98-.8 1.78-1.78 1.78H9.78C8.8 24 8 23.2 8 22.22V9.78C8 8.8 8.8 8 9.78 8h12.44C23.2 8 24 8.8 24 9.78v12.44z"
@@ -533,7 +564,7 @@
             </a>
           </li>
           <li class="footer__social__item">
-            <a href="" class="footer__social__link">
+            <a href="" class="footer__social__link" aria-label="twitter">
               <svg width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M16 32a15.7 15.7 0 01-6.22-1.27 16.02 16.02 0 01-5.1-3.4 16.02 16.02 0 01-3.41-5.11A15.7 15.7 0 010 16c0-2.17.42-4.24 1.27-6.22a16.02 16.02 0 013.4-5.1 16.02 16.02 0 015.11-3.41A15.7 15.7 0 0116 0c2.17 0 4.24.42 6.22 1.27 1.98.84 3.68 1.97 5.1 3.4a16.02 16.02 0 013.41 5.11A15.7 15.7 0 0132 16c0 2.17-.42 4.24-1.27 6.22a16.02 16.02 0 01-3.4 5.1 16.02 16.02 0 01-5.11 3.41A15.7 15.7 0 0116 32zm9.4-24c-.12.06-.3.18-.56.34l-.6.41-.58.31-.66.22A3.68 3.68 0 0020.16 8c-2.44 0-3.66 1.02-3.66 3.06v1.85c-3.35-.17-5.93-1.4-7.72-3.7A2.52 2.52 0 008 11c0 1.38.51 2.42 1.53 3.13-.12 0-.3 0-.53.03-.23.02-.41.02-.55 0A1.57 1.57 0 018 14c0 .96.26 1.76.77 2.4a3.53 3.53 0 002.1 1.23c-.2.25-.5.37-.87.37-.33 0-.63-.1-.88-.28 0 .81.4 1.44 1.18 1.89.78.45 1.66.68 2.64.7-.38.57-.92.99-1.64 1.27-.72.28-1.49.42-2.3.42-.3 0-.7-.07-1.2-.22l-.8-.22c.33.67 1.02 1.24 2.05 1.72 1.03.48 2.34.72 3.92.72a10.3 10.3 0 007-2.69A13.08 13.08 0 0024 12c0-.04.13-.13.38-.27.25-.13.54-.31.87-.54.33-.23.58-.47.75-.72-1.13 0-1.88.02-2.25.06.73-.44 1.28-1.28 1.66-2.53z"
@@ -545,24 +576,24 @@
 
         <ul class="footer__user__list">
           <li class="footer__user__item">
-            <a href="" class="footer__user__link footer__user__login">
+            <a href="" class="footer__user__link">
               Войти
             </a>
           </li>
           <li class="footer__user__item">
-            <a href="" class="footer__user__link footer__user__compare">
+            <a href="" class="footer__user__link">
               Сравнить
             </a>
           </li>
           <li class="footer__user__item">
-            <a href="" class="footer__user__link footer__user__cart">
+            <a href="" class="footer__user__link">
               Корзина
             </a>
           </li>
         </ul>
 
         <div class="footer__contacts">
-          <a class="footer__contacts__link" href="tel:+74954959595">Тел.: +7 (495) 495-95-95</a>
+          <a class="footer__contacts__link" href="tel:+74954959595" aria-label="связаться с нами">Тел.: +7 (495) 495-95-95</a>
           <a class="footer__contacts__logo" href="https://htmlacademy.ru/intensive/htmlcss">
             <svg width="27" height="34" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path
