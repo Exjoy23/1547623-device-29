@@ -74,13 +74,59 @@ closeMap.addEventListener('click', (evt) => {
 const openPopup = info.querySelector('.contacts__link');
 const closePopup = info.querySelector('.contacts__popup__button');
 const popup = info.querySelector('.contacts__popup');
+const inputPopup = popup.querySelectorAll('.popup__input');
+const submitPopup = popup.querySelector('.contacts__popup__submit');
+
+let isStorageSupport = true;
+let storageName = '';
+let storageEmail = '';
+
+try {
+  storageName = localStorage.getItem('name');
+  storageEmail = localStorage.getItem('email');
+} catch (err) {
+  isStorageSupport = false;
+}
 
 openPopup.addEventListener('click', (evt) => {
   evt.preventDefault();
   openModal(popup);
+
+  if (storageName && storageEmail) {
+    inputPopup[0].value = storageName;
+    inputPopup[1].value = storageEmail;
+  }
+
+  if (!inputPopup[0].value) {
+    inputPopup[0].focus();
+  } else if (!inputPopup[1].value) {
+    inputPopup[1].focus();
+  } else {
+    inputPopup[2].focus();
+  }
 });
 
 closePopup.addEventListener('click', (evt) => {
   evt.preventDefault();
   closeModal(popup);
+});
+
+submitPopup.addEventListener('click', (evt) => {
+  inputPopup.forEach(item => {
+
+    if (!item.value) {
+      evt.preventDefault();
+      const clearWrong = () => {
+        item.classList.remove('wrong');
+      };
+      item.classList.add('wrong');
+      setTimeout(clearWrong, 500);
+    } else {
+
+      if (isStorageSupport) {
+        localStorage.setItem('name', inputPopup[0].value);
+        localStorage.setItem('email', inputPopup[1].value);
+      }
+    }
+  });
 });

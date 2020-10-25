@@ -470,20 +470,22 @@
         </div>
 
         <div class="contacts__popup">
+          <form class="contacts__popup__form" action="https://echo.htmlacademy.ru/" method="post">
           <p class="contacts__popup__item">
             <label class="contacts__popup__name" for="popup__name">Ваше имя:</label>
-            <input class="contacts__popup__name__input" id="popup__name" type="text" placeholder="Имя Фамилия">
+            <input class="contacts__popup__name__input popup__input" id="popup__name" type="text" placeholder="Имя Фамилия">
           </p>
           <p class="contacts__popup__item">
             <label class="contacts__popup__email" for="popup__email">Ваш e-mail:</label>
-            <input class="contacts__popup__email__input" id="popup__email" type="email" placeholder="email@example.com">
+            <input class="contacts__popup__email__input popup__input" id="popup__email" type="email" placeholder="email@example.com">
           </p>
           <p class="contacts__popup__item">
             <label class="contacts__popup__text" for="popup__text">Текст письма:</label>
-            <textarea class="contacts__popup__text__textaarea" name="text" id="popup__text" cols="30" rows="10">В свободной форме</textarea>
+            <textarea class="contacts__popup__text__textaarea popup__input" name="text" id="popup__text" cols="30" rows="10">В свободной форме</textarea>
           </p>
           <button class="contacts__popup__submit button" type="submit">Отправить</button>
           <button class="contacts__popup__button" type="button"></button>
+        </form>
         </div>
 
         <div class="contacts__map">
