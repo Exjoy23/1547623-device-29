@@ -1143,6 +1143,10 @@ a {
   box-shadow: 0 10px 16px 0 var(--black-03-op);
 }
 
+.contacts__map__iframe {
+  border: none;
+}
+
 .show {
   animation-name: show;
   animation-duration: 1s;
