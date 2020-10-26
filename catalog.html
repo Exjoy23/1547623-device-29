@@ -16,7 +16,7 @@
   <header class="main__header header__catalog">
     <div class="container">
       <div class="main__logo">
-        <a class="main__logo__link" href="index.html">
+        <a class="main__logo__link" href="index.html" aria-label="вернуться на главную страницу">
           <svg width="163" height="35" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip0)">
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -190,16 +190,19 @@
 
           <h2 class="visually__hidden">Фильтр товаров</h2>
 
+          <p class="filter__heading">
+            фильтр:
+          </p>
           <form class="filter__form" action="https://echo.htmlacademy.ru/" method="get">
             <fieldset class="filter__range">
-              <legend class="filter__range__title filter__title">Стоимость:</legend>
+              <legend class="filter__range__title filter__title">Стоимость</legend>
               <span class="visually__hidden">Отсортировать по стоимости</span>
               <div class="range__controls">
                 <div class="scale">
-                  <div class="bar" style="width: 140px; margin-left: 1px;"></div>
+                  <div class="bar" style="width: 114px; left: 0px;"></div>
                 </div>
-                <div class="toggle toggle__min" tabindex="0" style="left: 18px;"></div>
-                <div class="toggle toggle__max" tabindex="0" style="left: 160px;"></div>
+                <div class="toggle toggle__min" tabindex="0" style="left: 0px;"></div>
+                <div class="toggle toggle__max" tabindex="0" style="left: 114px;"></div>
               </div>
               <div class="price__controls">
                 <label class="min__price">
@@ -211,45 +214,45 @@
               </div>
             </fieldset>
 
-            <fieldset class="filter__group">
-              <legend class="filter__title filter__title">Цвет</legend>
+            <fieldset class="filter__color">
+              <legend class="filter__color__title filter__title">Цвет</legend>
               <span class="visually__hidden">Выбрать цвет селфи-палки</span>
-              <label class="filter">
-                <input class="visually__hidden radio__grid" type="checkbox" name="grid" checked>
-                <span class="filter__radio">Чёрный</span>
+              <label class="filter__color__label">
+                <input class="visually__hidden filter__color__input" type="checkbox" name="black" checked>
+                <span class="filter__color__desc">Чёрный</span>
               </label>
-              <label class="filter">
-                <input class="visually__hidden radio__grid" type="checkbox" name="grid">
-                <span class="filter__radio">Белый</span>
+              <label class="filter__color__label">
+                <input class="visually__hidden filter__color__input" type="checkbox" name="white">
+                <span class="filter__color__desc">Белый</span>
               </label>
-              <label class="filter">
-                <input class="visually__hidden radio__grid" type="checkbox" name="grid">
-                <span class="filter__radio">Синий</span>
+              <label class="filter__color__label">
+                <input class="visually__hidden filter__color__input" type="checkbox" name="blue" checked>
+                <span class="filter__color__desc">Синий</span>
               </label>
-              <label class="filter">
-                <input class="visually__hidden radio__grid" type="checkbox" name="grid">
-                <span class="filter__radio">Красный</span>
+              <label class="filter__color__label">
+                <input class="visually__hidden filter__color__input" type="checkbox" name="red" checked>
+                <span class="filter__color__desc">Красный</span>
               </label>
-              <label class="filter">
-                <input class="visually__hidden radio__grid" type="checkbox" name="grid">
-                <span class="filter__radio">Розовый</span>
+              <label class="filter__color__label">
+                <input class="visually__hidden filter__color__input" type="checkbox" name="pink">
+                <span class="filter__color__desc">Розовый</span>
               </label>
             </fieldset>
 
-            <fieldset class="filter__group__features">
-              <legend class="filter__feautures__title filter__title">Bluetooth</legend>
+            <fieldset class="filter__features">
+              <legend class="filter__features__title filter__title">Bluetooth</legend>
               <span class="visually__hidden">Выбрать наличие Bluetooth у селфи-палки</span>
-              <label class="filter__features">
-                <input class="visually__hidden checkbox__features" type="radio" checked>
-                <span class="filter__checkbox">Есть</span>
+              <label class="filter__features__label">
+                <input class="visually__hidden filter__features__input" name="boolean" type="radio" checked>
+                <span class="filter__features__desc">Есть</span>
               </label>
-              <label class="filter__features">
-                <input class="visually__hidden checkbox__features" type="radio">
-                <span class="filter__checkbox">Нет</span>
+              <label class="filter__features__label">
+                <input class="visually__hidden filter__features__input" name="boolean" type="radio">
+                <span class="filter__features__desc">Нет</span>
               </label>
             </fieldset>
-
-            <button class="filter__button" type="submit" aria-label="Показать отсортированные товары">Показать</button>
+            <button class="filter__features__button button" type="submit"
+              aria-label="Показать отсортированные товары">Показать</button>
           </form>
 
         </section>
@@ -267,7 +270,7 @@
                   <p class="goods__price">1 100 руб.</p>
                 </div>
                 <div class="goods__popup">
-                  <a class="goods__popup__button button" href="blank.html" >В корзину</a>
+                  <a class="goods__popup__button button" href="blank.html">В корзину</a>
                   <a class="goods__popup__link" href="blank.html">Добавить к сравнению</a>
                 </div>
               </div>
@@ -281,7 +284,7 @@
                   <p class="goods__price">1 500 руб.</p>
                 </div>
                 <div class="goods__popup">
-                  <a class="goods__popup__button button" href="blank.html" >В корзину</a>
+                  <a class="goods__popup__button button" href="blank.html">В корзину</a>
                   <a class="goods__popup__link" href="blank.html">Добавить к сравнению</a>
                 </div>
               </div>
@@ -295,13 +298,15 @@
                   <p class="goods__price">1 500 руб.</p>
                 </div>
                 <div class="goods__popup">
-                  <a class="goods__popup__button button" href="blank.html" >В корзину</a>
+                  <a class="goods__popup__button button" href="blank.html">В корзину</a>
                   <a class="goods__popup__link" href="blank.html">Добавить к сравнению</a>
                 </div>
               </div>
             </li>
 
             <li class="goods__item">
+              <span class="visually__hidden">Новый товар</span>
+              <span class="goods__new"></span>
               <div class="goods__inner">
                 <img class="goods__img" src="img/item-4.jpg" width="360" height="380" alt="">
                 <div class="goods__desc">
@@ -309,7 +314,7 @@
                   <p class="goods__price">1 900 руб.</p>
                 </div>
                 <div class="goods__popup">
-                  <a class="goods__popup__button button" href="blank.html" >В корзину</a>
+                  <a class="goods__popup__button button" href="blank.html">В корзину</a>
                   <a class="goods__popup__link" href="blank.html">Добавить к сравнению</a>
                 </div>
               </div>
@@ -318,7 +323,7 @@
 
           <ul class="goods__pagination__list">
             <li class="goods__pagination__item">
-              <a class="goods__back" href="blank.html" aria-label="назад">назад</a>
+              <a class="goods__back" href="blank.html" aria-label="предыдущая страница">назад</a>
             </li>
             <li class="goods__pagination__item">
               <ul class="goods__pagination__inner__list">
@@ -334,7 +339,7 @@
               </ul>
             </li>
             <li class="goods__pagination__item">
-              <a class="goods__next" href="blank.html" aria-label="вперед">вперед</a>
+              <a class="goods__next" href="blank.html" aria-label="следующая страница">вперед</a>
             </li>
           </ul>
 
@@ -350,7 +355,7 @@
   <footer class="footer">
     <div class="container footer__wrapper">
       <div class="footer__address">
-        <a class="footer__address__link" href="index.html">
+        <a class="footer__address__link" href="index.html" aria-label="вернуться на главную страницу">
           <svg width="163" height="35" fill="none" xmlns="http://www.w3.org/2000/svg">
             <g clip-path="url(#clip1)">
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -457,7 +462,6 @@
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
 </body>
 
 </html>
